@@ -38,7 +38,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     public Usuario updateUser(Long id, UsuarioDto usuarioDto) {
         Usuario usuario = usuarioRepository.findById(id).orElseThrow();
 
-        usuario.setNomeCompleto(usuario.getNomeCompleto());
+        usuario.setNomeCompleto(usuarioDto.getNomeCompleto());
         usuario.setCpf(usuarioDto.getCpf());
         usuario.setEmail(usuarioDto.getEmail());
         usuario.setPassword(usuarioDto.getPassword());
